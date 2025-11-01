@@ -1,9 +1,9 @@
-# 📌 Credit Default Risk Prediction – SBI Hackathon 2025  
+# Credit Default Risk Prediction – SBI Hackathon 2025  
 Machine Learning pipeline to classify bank customers as **defaulters vs non-defaulters** using real credit account data with high class imbalance.
 
 ---
 
-## 🧠 Problem Statement  
+## Problem Statement  
 Financial institutions face increasing risk due to delayed payments and loan defaults.  
 The goal of this project is to **predict whether a customer is likely to default** based on historical credit & repayment behavior.
 
@@ -13,7 +13,7 @@ The goal of this project is to **predict whether a customer is likely to default
 
 ---
 
-## 📂 Dataset Overview  
+## Dataset Overview  
 | Description | Value |
 |-------------|--------|
 | Total rows | ~310K |
@@ -24,14 +24,14 @@ The goal of this project is to **predict whether a customer is likely to default
 
 ---
 
-## 🏗️ End-to-End Pipeline
+## End-to-End Pipeline
 Data Loading → EDA → Feature Engineering → Train-Test Split →
 Resampling + Class Weighting → Model Training → Threshold Tuning → Explainability (SHAP)
 
 
 ---
 
-## 🔧 Feature Engineering Summary  
+## Feature Engineering Summary  
 ✔ Aggregated transactional behavior (rolling means, sums, differences)  
 ✔ Utilization ratios & credit limits  
 ✔ Statistical summary features (mean, std, min, max per metric)  
@@ -41,7 +41,7 @@ Resampling + Class Weighting → Model Training → Threshold Tuning → Explain
 
 ---
 
-## ⚠️ Handling Class Imbalance  
+## Handling Class Imbalance  
 | Technique | Used? | Notes |
 |-----------|-------|-------|
 | Class weights | ✅ | `scale_pos_weight` in XGBoost |
@@ -51,7 +51,7 @@ Resampling + Class Weighting → Model Training → Threshold Tuning → Explain
 
 ---
 
-## 🤖 Models Trained & Compared
+## Models Trained & Compared
 
 | Model | F1 (Class 1) | AUPRC | Notes |
 |-------|--------------|-------|-------|
@@ -66,7 +66,7 @@ Resampling + Class Weighting → Model Training → Threshold Tuning → Explain
 
 ---
 
-## 🏆 Final Model Performance
+## Final Model Performance
 
 ### ✅ Baseline XGBoost + Threshold Tuning (threshold = 0.6)
 - F1 (defaulters): 0.4408
@@ -86,7 +86,7 @@ Resampling + Class Weighting → Model Training → Threshold Tuning → Explain
 
 ---
 
-## 🎯 Threshold Tuning  
+## Threshold Tuning  
 Used `precision_recall_curve` sweep to maximize F1:
 
 ```python
